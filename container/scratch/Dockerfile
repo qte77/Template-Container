@@ -20,9 +20,10 @@ COPY --from=python-base /bin/rm /bin/rm
 COPY --from=python-base /bin/sh /bin/sh
 # COPY --from=python-base /bin/mkdir /bin/mkdir
 
-RUN echo ":${USER}:x:1000:${USER}" >> /etc/group
-RUN echo ":${USER}:x:1001:" >> /etc/group
-RUN echo ":${USER}:x:1000:1001::/home/:${USER}:" >> /etc/passwd
+RUN set -xe && \
+    echo ":${USER}:x:1000:${USER}" >> /etc/group && \
+    echo ":${USER}:x:1001:" >> /etc/group && \
+    echo ":${USER}:x:1000:1001::/home/:${USER}:" >> /etc/passwd
 
 RUN set -xe && \
     # mkdir ${HOME} && \

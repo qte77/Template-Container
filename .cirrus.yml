@@ -36,5 +36,7 @@ scan_containerfile_task:
     TRIVY_ROOT: "./container/${CIRRUS_TASK_NAME}/Dockerfile"
   container:
     image: "docker.io/aquasec/trivy:0.31.3"
-  scan_script: "trivy config ${TRIVY_ARGS} ${TRIVY_ROOT}"
+  scan_script:
+    - "echo ${TRIVY_ROOT}"
+    - "trivy config ${TRIVY_ARGS} ${TRIVY_ROOT}"
 ...
