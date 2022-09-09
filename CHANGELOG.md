@@ -21,9 +21,9 @@ Types of changes:
 ### Added
 
 - Container
-- `app`
-- `distroless`
-- `scratch`
+  - `app`
+  - `distroless`
+  - `scratch`
 - Pipeline
   - `.cirrus.yml`
   - `.bumpversion.cfg`
