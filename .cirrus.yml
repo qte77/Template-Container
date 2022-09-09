@@ -27,10 +27,14 @@ lint_containerfile_task:
 
 scan_containerfile_task:
   name: "Scan Containerfile"
+  matrix:
+    - name: "app"
+    - name: "distroless"
+    - name: "scratch"
+  env:
+    TRIVY_ARGS: "--severity CRITICAL --exit-code 1"
+    TRIVY_ROOT: "./container/${CIRRUS_TASK_NAME}/Dockerfile"
   container:
     image: "docker.io/aquasec/trivy:0.31.3"
-  scan_script: "trivy config
-                --severity CRITICAL
-                --exit-code 1
-                container/*/Dockerfile"
+  scan_script: "trivy config ${TRIVY_ARGS} ${TRIVY_ROOT}"
 ...

@@ -3,8 +3,7 @@
 # https://alexos.dev/2022/07/08/creating-an-up-to-date-distroless-python-image/
 
 FROM docker.io/library/python:3.9-slim as python-base
-# FROM scratch
-FROM gcr.io/distroless/python3-debian11
+FROM scratch
 
 ARG ARCH=x86_64-linux-gnu
 ARG USER="app"
