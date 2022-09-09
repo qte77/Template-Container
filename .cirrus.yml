@@ -1,0 +1,36 @@
+---
+# https://cirrus-ci.org/guide/writing-tasks/
+# https://cirrus-ci.org/examples/
+
+container:
+  cpu: 1
+  memory: "2G"
+
+lint_markdown_task:
+  name: "Lint Markdown"
+  container:
+    image: "docker.io/library/node:alpine3.16"
+  install_script: "npm install -g markdownlint-cli"
+  lint_script: "markdownlint *.md docs/*.md"
+
+lint_yaml_task:
+  name: "Lint YAML"
+  container:
+    image: "docker.io/pipelinecomponents/yamllint:0.20.6"
+  script: "yamllint ."
+
+lint_containerfile_task:
+  name: "Lint Containerfile"
+  container:
+    image: "docker.io/hadolint/hadolint:latest-alpine"
+  test_script: "hadolint Dockerfile"
+
+scan_containerfile_task:
+  name: "Scan Containerfile"
+  container:
+    image: "docker.io/aquasec/trivy:0.31.3"
+  scan_script: "trivy config
+                --severity CRITICAL
+                --exit-code 1
+                Dockerfile"
+...
