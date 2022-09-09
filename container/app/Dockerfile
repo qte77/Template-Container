@@ -1,3 +1,5 @@
+# https://alexos.dev/2022/07/08/creating-an-up-to-date-distroless-python-image/
+
 FROM docker.io/library/python:3.9-slim as baseimage
 
 LABEL site="https://qte77.github.io"

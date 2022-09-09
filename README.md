@@ -9,3 +9,10 @@ Template-Container
 This Repo provides base container templates.
 
 Version <0.0.0>. See [CHANGELOG.md](./CHANGELOG.md).
+
+Inspirations
+---
+
+- [Smaller Images (scratch)](https://blog.while-true-do.io/container-smaller-images/)
+- [Google distroless](https://github.com/GoogleContainerTools/distroless)
+- [Python distroless](https://alexos.dev/2022/07/08/creating-an-up-to-date-distroless-python-image/)

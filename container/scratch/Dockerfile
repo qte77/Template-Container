@@ -1,6 +1,4 @@
-# https://github.com/GoogleContainerTools/distroless
 # https://blog.while-true-do.io/container-smaller-images/
-# https://alexos.dev/2022/07/08/creating-an-up-to-date-distroless-python-image/
 
 FROM docker.io/library/python:3.9-slim as python-base
 FROM scratch
