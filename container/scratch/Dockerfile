@@ -1,3 +1,4 @@
+# https://hub.docker.com/_/scratch/
 # https://blog.while-true-do.io/container-smaller-images/
 
 FROM docker.io/library/python:3.9-slim as python-base
